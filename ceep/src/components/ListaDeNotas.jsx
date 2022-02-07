@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import CardNota from "./CardNota";
+import CardNota from "./CardNota/CardNota";
 
-class ListaDeNotas extends Component{
+class ListaDeNotas extends Component {
     render(){
         return(
             <ul>
-                {Array.of("Trabalho", "Trabalho", "Estudos").map((categoria) => {
+                {Array.of("Trabalho", "Trabalho", "Estudos").map((categoria, index) => {
                     return(
-                    <li>
-                        <div>{ categoria }</div>
-                        <CardNota />
-                    </li>
+                        <li key = { index }>
+                            <div>{ categoria }</div>
+                            <CardNota />
+                        </li>
                     )
                 })}
             </ul>
@@ -19,4 +19,4 @@ class ListaDeNotas extends Component{
 
 }
 
-export default ListaDeNotas
+export default ListaDeNotas;
