@@ -1,0 +1,44 @@
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0;
+}
+
+.lista-categorias_lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0;
+}
+
+.lista-categorias_item {
+    background-color: var(--primaria);
+    border-radius: 5px;
+    color: var(--fundo);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 200px;
+}
+    
+
+.lista-categorias_input {
+    background-color: var(--secundaria);
+    border-radius: 5px;
+    color: var(--fundo);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 200px;
+}
