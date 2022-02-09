@@ -4,52 +4,32 @@ import FormularioCadastro from "./components/FormularioCadastro";
 import ListaDeCategorias from "./components/ListaDeCategorias";
 import "./assets/App.css";
 import "./assets/index.css";
+import Caterogias from "./dados/Categorias";
+import ArrayDeNotas from "./dados/Notas";
 
 class App extends Component {
 
   constructor() {
     super();
-
-    this.state = {
-      notas: [],
-      categorias: ["games", "filmes", "animes"],
-    }
-  }
-
-  criarNota(titulo, texto, categoria) {
-    const nota = { titulo, texto, categoria }
-    const novoArrayNotas = [...this.state.notas, nota];
-    const novoEstado = { notas: novoArrayNotas}
-    this.setState(novoEstado)
-  }
-
-  apagarNota(index) {
-    let arrayNotas = this.state.notas;
-    arrayNotas.splice(index,1);
-    this.setState({ notas: arrayNotas })
-  }
-
-  adicionarCategoria(nomeCategoria) {
-    const novoArrayCategorias = [...this.state.categorias, nomeCategoria];
-    const novoEstado = {...this.state,  categorias: novoArrayCategorias}
-    this.setState(novoEstado)
+    this.categorias = new Caterogias();
+    this.notas = new ArrayDeNotas();
   }
 
   render() {
     return (
       <section className = "conteudo">
         <FormularioCadastro 
-          categorias = { this.state.categorias } 
-          criarNota = { this.criarNota.bind(this) }
+          categorias = { this.categorias.categorias } 
+          criarNota = { this.notas.criarNota }
         />
         <main className = "conteudo-principal">
           <ListaDeCategorias 
-            adicionarCategoria = { this.adicionarCategoria.bind(this) }
-            categorias = { this.state.categorias }
+            adicionarCategoria = { this.categorias.adicionarCategoria }
+            categorias = { this.categorias.categorias }
           />
           <ListaDeNotas 
-            apagarNota = { this.apagarNota.bind(this) }
-            notas = { this.state.notas }
+            apagarNota = { this.notas.apagarNota }
+            notas = { this.notas.notas }
           />
         </main>
       </section>
