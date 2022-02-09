@@ -2,6 +2,9 @@
 
 Este projeto engloba 2(dois) cursos realizados através da plataforma [Alura](https://www.alura.com.br/).
 
+### Foco: 
+ - Front-End
+ - ReactJS
 ## React: Entendendo como a biblioteca funciona
 ### Instrutor: [Ricardo Bugan Debs](https://www.linkedin.com/in/ricardo-bugan-b0581379/)
 
