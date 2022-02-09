@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <section className = "conteudo">
         <FormularioCadastro 
-          categorias = { this.categorias.categorias } 
-          criarNota = { this.notas.criarNota }
+          categorias = { this.categorias } 
+          criarNota = { this.notas.adicionarNota.bind(this.notas) }
         />
         <main className = "conteudo-principal">
           <ListaDeCategorias 
