@@ -3,7 +3,8 @@ import ListaDeNotas from "./components/ListaDeNotas";
 import FormularioCadastro from "./components/FormularioCadastro";
 import ListaDeCategorias from "./components/ListaDeCategorias";
 import "./assets/App.css";
-import './assets/index.css';
+import "./assets/index.css";
+
 class App extends Component {
 
   constructor() {
@@ -11,12 +12,12 @@ class App extends Component {
 
     this.state = {
       notas: [],
-      categorias: [],
+      categorias: ["games", "filmes", "animes"],
     }
   }
 
-  criarNota(titulo, texto) {
-    const nota = { titulo, texto }
+  criarNota(titulo, texto, categoria) {
+    const nota = { titulo, texto, categoria }
     const novoArrayNotas = [...this.state.notas, nota];
     const novoEstado = { notas: novoArrayNotas}
     this.setState(novoEstado)

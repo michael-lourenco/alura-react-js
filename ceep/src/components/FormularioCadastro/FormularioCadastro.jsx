@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./estilo.css";
+
 class FormularioCadastro extends Component {
 
     constructor(props) {
         super(props)
         this.titulo = "";
         this.texto = "";
+        this.categoria = "Sem Categoria";
     }
 
     _criarNota(event) {
         event.preventDefault();
         event.stopPropagation();
-        this.props.criarNota(this.titulo, this.texto);
+        this.props.criarNota(this.titulo, this.texto, this.categoria);
     }
 
     _handlerMudancaTitulo = (event) => {
@@ -24,14 +26,20 @@ class FormularioCadastro extends Component {
         this.texto = event.target.value;
     }
 
+    _handlerMudancaCategoria = (event) => {
+        event.stopPropagation();
+        this.categoria = event.target.value;
+    }
+
     render() {
         return (
         <form className = "form-cadastro "
             onSubmit = { this._criarNota.bind(this) }
         >
-            <select name="form-cadastro_input">
+            <select onChange = { this._handlerMudancaCategoria.bind(this) } name = "form-cadastro_input">
+                <option>Sem Categoria</option>
                 {this.props.categorias.map((categoria, index) => {
-                    return <option> { categoria }</option>
+                    return <option key = { index }> { categoria }</option>
                 })}
             </select>
             <input
